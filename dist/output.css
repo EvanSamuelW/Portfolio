@@ -871,6 +871,18 @@ input[type="range"]::-ms-fill-lower {
   margin-left: auto;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-9 {
+  margin-top: 2.25rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1193,6 +1205,10 @@ input[type="range"]::-ms-fill-lower {
 
 .pt-36 {
   padding-top: 9rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .text-center {

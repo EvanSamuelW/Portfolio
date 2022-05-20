@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+    background-color: #e5e5e5;
+}
+
+.course {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.course h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #3d4c32;
+}
+
+#h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #3d4c32;
+}
+
+.row .course-col p {
+    color: #000;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 18px;
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.row-header {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.course-column {
+    flex-basis: 31%;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.column {
+    flex-basis: 30%;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.course-col {
+    flex-basis: 31%;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.row .course-column i {
+    padding: 1rem;
+    font-size: 5rem;
+    color: #3d4c32;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.course-column:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.course-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 700px) {
+    .text-box h1 {
+        font-size: 30px;
+    }
+    .text-box h2 {
+        font-size: 20px;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .row-header {
+        flex-direction: column;
+    }
+    .header svg {
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        z-index: 1;
+        top: 70px;
+        right: 190px;
+    }
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #3d4c32;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .container .sec.aboutus {
+    margin: auto;
+    width: 50%;
+}
+
+footer .container h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+
+/* footer .container h2:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: #3d4c32;
+} */
+
+footer p {
+    color: #999;
+}
+
+.sci {
+    margin-top: 20px;
+    display: flex;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.sci li a:hover {
+    background: white;
+    color: #3d4c32;
+}
+
+.sci li a:hover .fa {
+    color: #3d4c32;
+}
+
+.sci li a .fa {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* .sci li a .fa:hover {
+    color: #3d4c32;
+    font-size: 20px;
+} */
+
+.contact {
+    position: relative;
+    width: 30%;
+}
+
+.contact .infor {
+    position: relative;
+    margin-left: -30px;
+}
+
+.contact .infor li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contact .infor li span:nth-child(1) {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact .infor li span {
+    color: #999;
+}
+
+#Service {
+    margin-top: -10px;
+}
+
+.contact .infor li a {
+    color: #999;
+    text-decoration: none;
+}
+
+.contact .infor li a:hover {
+    color: #fff;
+}
+
+.copyrightText {
+    margin-top: 20px;
+    width: 100%;
+    padding: 8px 100px;
+    text-align: center;
+    color: #777;
+}
+
+@media (max-width: 991px) {
+    footer {
+        padding: 40px;
+    }
+    footer .container {
+        flex-direction: column;
+    }
+    footer .container .sec {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    footer .container .sec.aboutus,
+    .contact {
+        width: 100%;
+    }
+    .copyrightText {
+        padding: 8px 40px;
+    }
+}

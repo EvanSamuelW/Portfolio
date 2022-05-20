@@ -62,6 +62,10 @@ body {
     transition: 0.5s;
 }
 
+#img {
+    margin-left: 20%;
+}
+
 .column {
     flex-basis: 30%;
     box-sizing: border-box;

@@ -17,7 +17,7 @@
 
 <body>
 
-    <nav class="bg-primary shadow-lg sticky top-0 z-30">
+    <nav class="bg-primary shadow-lg fixed inset-x-0 z-30">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between">
                 <div class="flex space-x-7">
@@ -55,13 +55,13 @@
         </div>
         <div class="hidden mobile-menu lg:hidden">
             <ul class="">
-                <li><a href="#home" class="block text-sm px-7 py-4 text-white">Home</a></li>
-                <li><a href="#about" class="block text-sm text-white px-7 py-4 transition duration-300">About</a></li>
-                <li><a href="#experience" class="block text-sm px-7 text-white py-4 transition duration-300">Experience</a></li>
-                <li><a href="#skills" class="block text-sm px-7 py-4 text-white transition duration-300">Skills</a></li>
+                <li><a id="toggle" href="#home" class="block text-sm px-7 py-4 text-white">Home</a></li>
+                <li><a id="toggle" href="#about" class="block text-sm text-white px-7 py-4 transition duration-300">About</a></li>
+                <li><a id="toggle" href="#experience" class="block text-sm px-7 text-white py-4 transition duration-300">Experience</a></li>
+                <li><a id="toggle" href="#skills" class="block text-sm px-7 py-4 text-white transition duration-300">Skills</a></li>
 
-                <li><a href="#project" class="block text-sm px-7 py-4 text-white transition duration-300">Project</a></li>
-                <li><a href="#Footer" class="block text-sm px-7 py-4 text-white transition duration-300">Contact</a></li>
+                <li><a id="toggle" href="#project" class="block text-sm px-7 py-4 text-white transition duration-300">Project</a></li>
+                <li><a id="toggle" href="#Footer" class="block text-sm px-7 py-4 text-white transition duration-300">Contact</a></li>
 
 
             </ul>
@@ -69,232 +69,240 @@
         <script>
             const btn = document.querySelector("button.mobile-menu-button");
             const menu = document.querySelector(".mobile-menu");
-
+            const m = document.querySelectorAll("#toggle");
             btn.addEventListener("click", () => {
                 menu.classList.toggle("hidden");
             });
+            const length = m.length;
+            for (i = 0; i < length; i++) {
+                m[i].addEventListener("click", () => {
+                    menu.classList.add("hidden");
+                })
+            }
         </script>
     </nav>
+    <main>
+        <section id="home">
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <div class="w-full self-center mt-20 px-10 lg:w-1/2 sm:order-last" data-aos="fade-in">
+                        <h1 class="text-lg font-semibold md:text-xl">Hi,</h1> <span class="mt-1 block text-4xl font-bold lg:text-5xl">I'm Evan</span></h1>
+                        <h1 class="text-base font-semibold text-primary md:text-xl"></h1> <span class="mt-1 block text-4xl font-bold text-primary  lg:text-5xl">Welcome to My Site</span></h1>
+                        <button class=" bg-primary text-white duration-500 px-6 py-2 mx-1 mt-4 hover:bg-yellow rounded ">
+                                <a href="/Portfolio/CV.pdf">Download CV</a>
+    
+                            </button>
 
-    <section id="home">
-        <div class="container">
-            <div class="flex flex-wrap">
-                <div class="w-full self-center mt-20 px-10 lg:w-1/2 sm:order-last" data-aos="fade-in">
-                    <h1 class="text-lg font-semibold md:text-xl">Hi,</h1> <span class="mt-1 block text-4xl font-bold lg:text-5xl">I'm Evan</span></h1>
-                    <h1 class="text-base font-semibold text-primary md:text-xl"></h1> <span class="mt-1 block text-4xl font-bold text-primary  lg:text-5xl">Welcome to My Site</span></h1>
-                    <button class=" bg-primary text-white duration-500 px-6 py-2 mx-1 mt-4 hover:bg-yellow rounded ">
-                            <a href="/CV.pdf">Download CV</a>
 
-                        </button>
-
-
-                </div>
-                <div class="w-full self-end lg:w-1/2">
-                    <div class="relative px-2 lg:right-0 lg:mt-9" data-aos="fade-in">
-                        <img src="foto.png" alt="Evan Samuel" class="relative z-10 mx-auto max-w-full" />
-                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
-                                <svg height="500" width="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#D4D2A5" d="M45.3,-68.9C58.5,-61.9,69.1,-49.1,72.6,-35C76,-20.9,72.4,-5.5,68.9,9C65.4,23.5,61.9,37.1,54,47.5C46.1,58,33.7,65.3,19.5,71.8C5.4,78.4,-10.5,84.3,-22.8,79.7C-35,75.2,-43.6,60.2,-50.6,46.8C-57.6,33.4,-63,21.6,-68.1,7.8C-73.3,-6,-78,-21.9,-72.8,-33.2C-67.6,-44.5,-52.4,-51.1,-38.6,-57.9C-24.8,-64.7,-12.4,-71.6,1.8,-74.4C16,-77.2,32,-76,45.3,-68.9Z" transform="translate(100 100)" />
-                                  </svg>
-                        </span>
                     </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="pt-36">
-        <div class="container">
-            <div class="mx-auto mb-16 max-w-xl">
-                <h1 class="mb-2 text-lg text-center font-semibold text-primary" id="h1">About Me</h1>
-            </div>
-            <div class="flex flex-wrap" data-aos="fade-left">
-                <div class="mb-10 w-full lg:pt-20 lg:pl-10 px-5 lg:pl-20 lg:w-1/2">
-                    <p class="font-semibold lg:pl-10 text-lg text-center">An undergraduate informatics student with experience working with several projects with other companies and interested in web programming and mobile app development. I have the ability to collaborate and work well with others. I also
-                        like to learn something new.
-                </div>
-
-                <div class="w-full self-end lg:w-1/2" data-aos="fade-right">
-                    <div class="relative">
-                        <img src="aboutme.jpg" alt="Evan Samuel" class="relative mx-auto w-3/4 h-3/4 lg:w-1/2 lg:h-1/2 rounded-lg" />
-                        </span>
+                    <div class="w-full self-end lg:w-1/2">
+                        <div class="relative px-2 lg:right-0 lg:mt-9" data-aos="fade-in">
+                            <img src="foto.png" alt="Evan Samuel" class="relative z-10 mx-auto max-w-full" />
+                            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+                                    <svg height="500" width="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="#D4D2A5" d="M45.3,-68.9C58.5,-61.9,69.1,-49.1,72.6,-35C76,-20.9,72.4,-5.5,68.9,9C65.4,23.5,61.9,37.1,54,47.5C46.1,58,33.7,65.3,19.5,71.8C5.4,78.4,-10.5,84.3,-22.8,79.7C-35,75.2,-43.6,60.2,-50.6,46.8C-57.6,33.4,-63,21.6,-68.1,7.8C-73.3,-6,-78,-21.9,-72.8,-33.2C-67.6,-44.5,-52.4,-51.1,-38.6,-57.9C-24.8,-64.7,-12.4,-71.6,1.8,-74.4C16,-77.2,32,-76,45.3,-68.9Z" transform="translate(100 100)" />
+                                      </svg>
+                            </span>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
-        </div>
-        </div>
-    </section>
+        </section>
 
-    <article class="course " id="experience" data-aos="fade-in">
-        <h1 class="pa-10 mb-10" id="h1 ">Experience</h1>
-        <ol class="items-center sm:flex ml-10 object-center ">
-            <li class="relative mb-6 sm:mb-0 ">
-                <div class="flex items-center ">
-                    <div class="flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white sm:ring-8 shrink-0 ">
-                        <svg class="w-3 h-3 text-blue-600 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1
-                            1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z " clip-rule="evenodd "></path></svg>
+        <section id="about" class="pt-36">
+            <div class="container">
+                <div class="mx-auto mb-16 max-w-xl">
+                    <h1 class="mb-2 text-lg text-center font-semibold text-primary" id="h1">About Me</h1>
+                </div>
+                <div class="flex flex-wrap" data-aos="fade-left">
+                    <div class="mb-10 w-full lg:pt-20 lg:pl-10 px-5 lg:pl-20 lg:w-1/2">
+                        <p class="font-semibold lg:pl-10 text-lg text-center">An undergraduate informatics student with experience working with several projects with other companies and interested in web programming and mobile app development. I have the ability to collaborate and work well with others.
+                            I also like to learn something new.
                     </div>
-                    <div class="hidden sm:flex w-full bg-black h-0.5 "></div>
-                </div>
-                <div class="mt-3 sm:pr-8 ">
-                    <h3 class="text-lg font-semibold text-black-900 ">Astra Credit Company</h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 ">Jan 2021 - Jul 2021</time>
-                    <p class="text-base font-normal text-gray-500 ">As backend developer with Outsystems</p>
-                </div>
-            </li>
-            <li class="relative mb-6 sm:mb-0 ">
-                <div class="flex items-center ">
-                    <div class="flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white sm:ring-8 shrink-0 ">
-                        <svg class="w-3 h-3 text-blue-600 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1
-                            1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z " clip-rule="evenodd "></path></svg>
-                    </div>
-                    <div class="hidden sm:flex w-full bg-black h-0.5 "></div>
-                </div>
-                <div class="mt-3 sm:pr-8 ">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white ">PT. Frisidea Tech Indonesia</h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500 ">Jul 2021 - Jan 2022</time>
-                    <p class="text-base font-normal text-gray-500 dark:text-gray-400 ">Developing API using Laravel Framework for Career Support Website</p>
-                </div>
-            </li>
-        </ol>
-    </article>
 
-
-    <article class="course " id="skills">
-        <h1>Skills</h1>
-        <div class="row ">
-            <div class="course-column" data-aos="flip-right">
-                <i class="fa fa-code "></i>
-                <h3 class="text-primary font-bold ">Front End</h3>
-                <ul>
-                    <li>Vue</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Javascript</li>
-
-                </ul>
-            </div>
-            <div class="course-column " data-aos="flip-right">
-                <i class="fa fa-server " aria-hidden="true "></i>
-
-                <h3 class="text-primary font-bold ">Back End</h3>
-                <ul>
-                    <li>Laravel</li>
-                    <li>NodeJS</li>
-                    <li>AWS</li>
-                    <li>PostgreSQL</li>
-                    <li>MongoDB</li>
-                </ul>
-
-            </div>
-            <div class="course-column " data-aos="flip-left">
-                <i class="fa fa-mobile " aria-hidden="true "></i>
-                <h3 class="text-primary font-bold ">Mobile</h3>
-                <ul>
-                    <li>Flutter</li>
-                    <li>Kotlin</li>
-                    <li>Java</li>
-
-                </ul>
-
-            </div>
-        </div>
-    </article>
-
-    <article class="course " id="project">
-        <h1>Projects</h1>
-        <div class="flex flex-wrap ">
-            <div class="w-full self-end px-4 lg:w-1/3 py-10 ">
-                <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
-                    <a href="# ">
-                        <img class="rounded-t-lg " src="projects/weatherApp.PNG " alt=" " />
-                    </a>
-                    <div class="p-5 ">
-                        <a href="">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">Simple Weather App</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 "> A simple web application built using ReactJS and OpenWeather API. The website can display weather data on certain location based on user input.</p>
-                        <a href="https://github.com/EvanSamuelW/Simple-Weather-App-React" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700
-                            dark:focus:ring-blue-800 ">
-                            View on Github
-
-                                <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
-                            11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
-                            </a>
+                    <div class="w-full self-end lg:w-1/2" data-aos="fade-right">
+                        <div class="relative">
+                            <img src="aboutme.jpg" alt="Evan Samuel" class="relative mx-auto w-3/4 h-3/4 lg:w-1/2 lg:h-1/2 rounded-lg" />
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="w-full self-end px-4 lg:w-1/3 py-10">
-                <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
-                    <a href="# ">
-                        <img class="rounded-t-lg " src="projects/akb.PNG " alt=" " />
-                    </a>
-                    <div class="p-5 ">
+            </div>
+        </section>
+
+        <article class="course " id="experience" data-aos="fade-in">
+            <h1 class="pa-10 mb-10" id="h1 ">Experience</h1>
+            <ol class="items-center sm:flex ml-10 object-center ">
+                <li class="relative mb-6 sm:mb-0 ">
+                    <div class="flex items-center ">
+                        <div class="flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white sm:ring-8 shrink-0 ">
+                            <svg class="w-3 h-3 text-blue-600 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1
+                                1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z " clip-rule="evenodd "></path></svg>
+                        </div>
+                        <div class="hidden sm:flex w-full bg-black h-0.5 "></div>
+                    </div>
+                    <div class="mt-3 sm:pr-8 ">
+                        <h3 class="text-lg font-semibold text-black-900 ">Astra Credit Company</h3>
+                        <time class="block mb-2 text-sm font-normal leading-none text-gray-400 ">Jan 2021 - Jul 2021</time>
+                        <p class="text-base font-normal text-gray-500 ">As backend developer with Outsystems</p>
+                    </div>
+                </li>
+                <li class="relative mb-6 sm:mb-0 ">
+                    <div class="flex items-center ">
+                        <div class="flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white sm:ring-8 shrink-0 ">
+                            <svg class="w-3 h-3 text-blue-600 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1
+                                1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z " clip-rule="evenodd "></path></svg>
+                        </div>
+                        <div class="hidden sm:flex w-full bg-black h-0.5 "></div>
+                    </div>
+                    <div class="mt-3 sm:pr-8 ">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white ">PT. Frisidea Tech Indonesia</h3>
+                        <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500 ">Jul 2021 - Jan 2022</time>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400 ">Developing API using Laravel Framework for Career Support Website</p>
+                    </div>
+                </li>
+            </ol>
+        </article>
+
+
+        <article class="course " id="skills">
+            <h1>Skills</h1>
+            <div class="row ">
+                <div class="course-column" data-aos="flip-right">
+                    <i class="fa fa-code "></i>
+                    <h3 class="text-primary font-bold ">Front End</h3>
+                    <ul>
+                        <li>Vue</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+
+                    </ul>
+                </div>
+                <div class="course-column " data-aos="flip-right">
+                    <i class="fa fa-server " aria-hidden="true "></i>
+
+                    <h3 class="text-primary font-bold ">Back End</h3>
+                    <ul>
+                        <li>Laravel</li>
+                        <li>NodeJS</li>
+                        <li>AWS</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+
+                </div>
+                <div class="course-column " data-aos="flip-left">
+                    <i class="fa fa-mobile " aria-hidden="true "></i>
+                    <h3 class="text-primary font-bold ">Mobile</h3>
+                    <ul>
+                        <li>Flutter</li>
+                        <li>Kotlin</li>
+                        <li>Java</li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </article>
+
+        <article class="course " id="project">
+            <h1>Projects</h1>
+            <div class="flex flex-wrap ">
+                <div class="w-full self-end px-4 lg:w-1/3 py-10 ">
+                    <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
                         <a href="# ">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">Atma Korean BBQ</h5>
+                            <img class="rounded-t-lg " src="projects/weatherApp.PNG " alt=" " />
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 ">This website can be used to simplify the business processes that restaurant owners encounter. This website is also available as Android app.
-                        </p>
-                        <a href="https://github.com/EvanSamuelW/FrontEndP3L" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700
-                            dark:focus:ring-blue-800 ">
-                            View on Github
-
-                                <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
-                            11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
+                        <div class="p-5 ">
+                            <a href="">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">Simple Weather App</h5>
                             </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 "> A simple web application built using ReactJS and OpenWeather API. The website can display weather data on certain location based on user input.</p>
+                            <a href="https://github.com/EvanSamuelW/Simple-Weather-App-React" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700
+                                dark:focus:ring-blue-800 ">
+                                View on Github
+    
+                                    <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
+                                11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
+                                </a>
+                        </div>
                     </div>
                 </div>
-
-
-            </div>
-            <div class="w-full self-end px-4 lg:w-1/3 py-10 ">
-                <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
-                    <a href="# ">
-                        <img class="rounded-t-lg" src="projects/e-vaksin.png " alt=" " />
-                    </a>
-                    <div class="p-5 ">
-                        <a href="https://github.com/EvanSamuelW/Front-End-E-Vaksin">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">E-Vaksin Website</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 ">Covid-19 website which can be used by vaccine providers and participants. This website also applied face recognition using faceapi.js library</p>
-                        <a href="https://github.com/EvanSamuelW/Front-End-E-Vaksin" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300
-                           ">
-                            View on Github
-
-                                <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
-                            11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
-                            </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-wrap ">
-            <div class="w-full self-end px-4 lg:w-1/3 py-10 ">
-                <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
-                    <a href="# ">
-                        <img class="rounded-t-lg " src="projects/covid.png " alt=" " />
-                    </a>
-                    <div class="p-5 ">
+                <div class="w-full self-end px-4 lg:w-1/3 py-10">
+                    <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
                         <a href="# ">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">Covid-19 Vaccination Android App</h5>
+                            <img class="rounded-t-lg " src="projects/akb.PNG " alt=" " />
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 ">A simple app for Covid vaccination where user can choose where they'd like to be vaccinated. This app also shows Covid daily data which is taken from official Indonesia Covid API</p>
-                        <a href="https://github.com/EvanSamuelW/CovidVaccinationApp" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white  bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700
-                            dark:focus:ring-blue-800 ">
-                              View on Github
-                                <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
-                            11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
+                        <div class="p-5 ">
+                            <a href="# ">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">Atma Korean BBQ</h5>
                             </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 ">This website can be used to simplify the business processes that restaurant owners encounter. This website is also available as Android app.
+                            </p>
+                            <a href="https://github.com/EvanSamuelW/FrontEndP3L" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700
+                                dark:focus:ring-blue-800 ">
+                                View on Github
+    
+                                    <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
+                                11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
+                                </a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="w-full self-end px-4 lg:w-1/3 py-10 ">
+                    <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
+                        <a href="# ">
+                            <img class="rounded-t-lg" src="projects/e-vaksin.png " alt=" " />
+                        </a>
+                        <div class="p-5 ">
+                            <a href="https://github.com/EvanSamuelW/Front-End-E-Vaksin">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">E-Vaksin Website</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 ">Covid-19 website which can be used by vaccine providers and participants. This website also applied face recognition using faceapi.js library</p>
+                            <a href="https://github.com/EvanSamuelW/Front-End-E-Vaksin" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300
+                               ">
+                                View on Github
+    
+                                    <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
+                                11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
+                                </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </article>
-
+            <div class="flex flex-wrap ">
+                <div class="w-full self-end px-4 lg:w-1/3 py-10 ">
+                    <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 ">
+                        <a href="# ">
+                            <img class="rounded-t-lg " src="projects/covid.png " alt=" " />
+                        </a>
+                        <div class="p-5 ">
+                            <a href="# ">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ">Covid-19 Vaccination Android App</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 ">A simple app for Covid vaccination where user can choose where they'd like to be vaccinated. This app also shows Covid daily data which is taken from official Indonesia Covid API</p>
+                            <a href="https://github.com/EvanSamuelW/CovidVaccinationApp" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white  bg-primary rounded-lg hover:bg-third focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700
+                                dark:focus:ring-blue-800 ">
+                                  View on Github
+                                    <svg class="ml-2 -mr-1 w-4 h-4 " fill="currentColor " viewBox="0 0 20 20 " xmlns="http://www.w3.org/2000/svg "><path fill-rule="evenodd " d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586
+                                11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z " clip-rule="evenodd "></path></svg>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
 
     </main>
+
+
+
 
     <footer id="Footer">
         <div class="container flex w-screen">

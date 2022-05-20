@@ -780,6 +780,10 @@ input[type="range"]::-ms-fill-lower {
   left: 50%;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
 .z-30 {
   z-index: 30;
 }
@@ -1209,6 +1213,10 @@ input[type="range"]::-ms-fill-lower {
 
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-center {

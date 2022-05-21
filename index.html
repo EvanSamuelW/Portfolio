@@ -96,6 +96,7 @@
                             button.addEventListener("click", () => {
                                 var link = document.createElement('a');
                                 link.href = 'CV.pdf';
+                                link.target = '_blank'
                                 link.download = 'CV.pdf';
                                 link.dispatchEvent(new MouseEvent('click'));
                             });
